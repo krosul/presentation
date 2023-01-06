@@ -12,7 +12,16 @@ module.exports = {
         whitePrimary: "#def4ef",
         bluePrimary: "#006a99",
         blueSecondary: "#006a99"
-      }
+      },
+      keyframes: {
+        "show": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        }
+      },
+      animation: {
+        "show": "show 1s ease-in-out"
+      },
     },
   },
   plugins: [],

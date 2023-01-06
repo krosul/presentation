@@ -1,0 +1,25 @@
+.slided {
+  transition: all 0.5s ease-out;
+  animation: slided 0.7s;
+}
+.appaer {
+  transition: all 0.5s ease-in-out;
+
+  animation: show 1.5s ease-in-out;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slided {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 23.5%;
+  }
+}
