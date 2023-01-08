@@ -1,10 +1,10 @@
 import React from 'react';
-import launch from '../../public/lanzamiento.png';
+import lightBulb from '../../public/innovacion.png';
 import { motion } from 'framer-motion';
-export const Valor = () => {
+export const Innovacion = () => {
   const cardVariants = {
     offscreen: {
-      x: -300,
+      x: 300,
       opacity: 0,
     },
     onscreen: {
@@ -29,14 +29,16 @@ export const Valor = () => {
         id="valor"
         className="h-screen w-full flex  justify-around items-center"
       >
-        <img src={launch.src} alt="rocket" className="w-64 h-6w-64 " />
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="font-semibold text-3xl">
-            LLeva tu empresa o emprendimiento al siguiente nivel con nosotros.
-          </h1>
-          <p className="text-2xl font-medium">
-            A la medida por el precio justo.
-          </p>
+        <div className="h-screen flex justify-center items-center">
+          <img src={lightBulb.src} alt="light-bulb" className="w-64 h-64 " />
+          <div className="text-center">
+            <h1 className="text-3xl font-semibold wra">
+              Creamos a la medida un proyecto para ti y tus necesidades.
+            </h1>
+            <h2 className="text-xl font-medium">
+              Con los mejores estandares de la industria.
+            </h2>
+          </div>
         </div>
       </motion.div>
     </motion.div>

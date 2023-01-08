@@ -1,2 +1,5 @@
 export * from "./Navbar.jsx"
 export * from "./Valor/Valor.jsx"
+export * from "./Innovacion/Innovacion.jsx"
+export * from "./WhoAre/WhoAre.jsx"
+export * from "./Questions/Questions.jsx"
