@@ -30,9 +30,9 @@ export const Navbar = () => {
     <motion.nav
       initial={false}
       animate={OpenToggleBar ? 'open' : 'closed'}
-      className="flex justify-start items-center mt-3  absolute top-3 h-full w-full   flex-col "
+      className="flex justify-start items-center mt-3  absolute top-3 h-full w-full flex-col "
     >
-      <div className=" w-4/5 sticky top-3">
+      <div className=" w-4/5 sticky top-3 z-10">
         <div className="flex items-center justify-between bg-white p-3 rounded-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,11 +73,11 @@ export const Navbar = () => {
             </button>
           </motion.div>
         </div>
-        <AnimatePresence>
+        <AnimatePresence className="z-10">
           {OpenToggleBar && (
             <motion.div
               className={
-                'bg-white w-full flex-col gap-2 p-3 flex items-center justify-between mt-2  ' +
+                'bg-white w-full flex-col gap-2 p-3 flex items-center justify-between mt-2 z-10 ' +
                 // styles.slided
                 ''
               }
@@ -112,17 +112,16 @@ export const Navbar = () => {
                 },
               }}
             >
-              {Links.map(({ text, href }) => (
-                <motion.a variants={itemVariants}>
+              {Links.map(({ text, href }, index) => (
+                <motion.div key={index} variants={itemVariants}>
                   <NextLink
                     href={href}
                     className="font-semibold border-b-2 border-blackPrimary"
-                    key={text}
                     onClick={() => setOpenToggleBar(!OpenToggleBar)}
                   >
                     {text}
                   </NextLink>
-                </motion.a>
+                </motion.div>
               ))}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <div className="h-screen flex flex-col justify-center items-center gap-3">
+      <div className="h-screen flex flex-col justify-center items-center gap-3 z-0">
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
