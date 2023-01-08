@@ -9,6 +9,34 @@ const Links = [
   { text: 'Preguntas Frecuentes', href: '#preguntasfrecuentes' },
   { text: 'Contacto', href: '#contacto' },
 ];
+const variants = {
+  open: {
+    clipPath: 'inset(0% 0% 0% 0% round 10px)',
+    transition: {
+      type: 'spring',
+      bounce: 0,
+      duration: 0.7,
+      delayChildren: 0.5,
+      staggerChildren: 0.05,
+    },
+  },
+  closed: {
+    clipPath: 'inset(10% 50% 90% 50% round 10px)',
+    transition: {
+      type: 'spring',
+      bounce: 0,
+      duration: 0.3,
+    },
+  },
+};
+const itemVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 300, damping: 24 },
+  },
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
 
 export const Navbar = () => {
   const [OpenToggleBar, setOpenToggleBar] = useState(false);
@@ -16,15 +44,6 @@ export const Navbar = () => {
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
-
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'spring', stiffness: 300, damping: 24 },
-    },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-  };
 
   return (
     <motion.nav
@@ -91,18 +110,7 @@ export const Navbar = () => {
                 },
               }}
               animate={OpenToggleBar ? 'open' : 'closed'}
-              variants={{
-                open: {
-                  clipPath: 'inset(0% 0% 0% 0% round 10px)',
-                  transition: {
-                    type: 'spring',
-                    bounce: 0,
-                    duration: 0.5,
-                    delayChildren: 1,
-                    staggerChildren: 0.05,
-                  },
-                },
-              }}
+              variants={variants}
               exit={{
                 clipPath: 'inset(10% 50% 90% 50% round 10px)',
                 transition: {
@@ -113,7 +121,12 @@ export const Navbar = () => {
               }}
             >
               {Links.map(({ text, href }, index) => (
-                <motion.div key={index} variants={itemVariants}>
+                <motion.div
+                  key={index}
+                  animate={OpenToggleBar ? 'open' : 'closed'}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                >
                   <NextLink
                     href={href}
                     className="font-semibold border-b-2 border-blackPrimary"

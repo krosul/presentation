@@ -17,17 +17,17 @@ export const Questions = () => {
         className="flex flex-col justify-center items-center text-center w-full"
       >
         <QuestionsCards
-          title="1·Quienes somos?"
+          title="Quienes somos?"
           description="Somos una empresa dedicada a la contruccion de software a la medida con años de experiencia en el campo nos encargamos de la creacion de paginas web desde lo mas basico hasta lo mas avanzado"
           index={0.8}
         />
         <QuestionsCards
-          title="2·Quienes somos?"
+          title="Como es el proceso de creacion?"
           description="Somos una empresa dedicada a la contruccion de software a la medida con años de experiencia en el campo nos encargamos de la creacion de paginas web desde lo mas basico hasta lo mas avanzado"
           index={1}
         />
         <QuestionsCards
-          title="3·Quienes somos?"
+          title="Como se paga?"
           description="Somos una empresa dedicada a la contruccion de software a la medida con años de experiencia en el campo nos encargamos de la creacion de paginas web desde lo mas basico hasta lo mas avanzado"
           index={1.2}
         />
