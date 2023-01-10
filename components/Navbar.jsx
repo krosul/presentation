@@ -35,15 +35,19 @@ const itemVariants = {
     y: 0,
     transition: { type: 'spring', stiffness: 300, damping: 24 },
   },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  closed: { opacity: 0, y: 20, transition: { duration: 1.2 } },
 };
 
 export const Navbar = () => {
   const [OpenToggleBar, setOpenToggleBar] = useState(false);
   const [SelectTheme, setSelectTheme] = useState('dark');
   useEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
+    if (SelectTheme === 'dark') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  }, [SelectTheme]);
 
   return (
     <motion.nav
@@ -95,18 +99,13 @@ export const Navbar = () => {
         <AnimatePresence className="z-10">
           {OpenToggleBar && (
             <motion.div
-              className={
-                'bg-white w-full flex-col gap-2 p-3 flex items-center justify-between mt-2 z-10 ' +
-                // styles.slided
-                ''
-              }
+              className="bg-white w-full flex-col gap-2 p-3 flex items-center justify-between mt-2 z-10 "
               initial={{
                 clipPath: 'inset(10% 50% 90% 50% round 10px)',
                 transition: {
                   type: 'spring',
                   bounce: 0,
                   duration: 0.3,
-                  delayChildren: 1,
                 },
               }}
               animate={OpenToggleBar ? 'open' : 'closed'}
@@ -120,27 +119,38 @@ export const Navbar = () => {
                 },
               }}
             >
-              {Links.map(({ text, href }, index) => (
-                <motion.div
-                  key={index}
-                  animate={OpenToggleBar ? 'open' : 'closed'}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.1 }}
+              {/* {Links.map(({ text, href }, index) => ( */}
+              <motion.div
+                initial={{
+                  open: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { type: 'spring', stiffness: 300, damping: 24 },
+                  },
+                  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+                }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.1 }}
+                animate={'open'}
+              >
+                <NextLink
+                  href={'/'}
+                  // key={index}
+                  className="font-semibold border-b-2 border-blackPrimary"
+                  onClick={() => setOpenToggleBar(!OpenToggleBar)}
                 >
-                  <NextLink
-                    href={href}
-                    className="font-semibold border-b-2 border-blackPrimary"
-                    onClick={() => setOpenToggleBar(!OpenToggleBar)}
-                  >
-                    {text}
-                  </NextLink>
-                </motion.div>
-              ))}
+                  "tex"
+                </NextLink>
+              </motion.div>
+              {/* ))} */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 className="w-6 h-6 fill-white stroke-blackPrimary dark:fill-blackPrimary"
+                onClick={() =>
+                  setSelectTheme(SelectTheme === 'dark' ? 'light' : 'dark')
+                }
               >
                 <path
                   strokeLinecap="round"

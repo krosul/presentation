@@ -8,7 +8,7 @@ export const MainLayout = ({ children }) => {
       <Head>
         <title>Presentation</title>
       </Head>
-      <main className="scroll-smooth z-0">
+      <main className="scroll-smooth w-full">
         <Navbar />
         {children}
       </main>

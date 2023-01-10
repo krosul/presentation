@@ -28,15 +28,15 @@ export const WhoAre = () => {
     >
       <motion.div
         variants={cardVariants}
-        className="flex justify-center items-center"
+        className="flex justify-center items-center flex-col"
       >
         <img src={interrogacion.src} alt="light-bulb" className="w-64 h-64" />
-        <div className="text-right w-4/6 ">
-          <h1 className="text-3xl font-medium">
+        <div className="text-center w-4/5 ">
+          <h1 className="font-medium text-lg sm:text-2xl lg:text-3xl dark:text-white">
             Somos expertos en desarrollo web con años de experiencias a la
             espalda.
           </h1>
-          <h2 className="text-xl "></h2>
+          <h2 className="text-sm font-semibold sm:text-xl lg:text-2xl dark:text-white"></h2>
         </div>
       </motion.div>
     </motion.div>

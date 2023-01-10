@@ -32,7 +32,7 @@ export default function Home() {
           <motion.div variants={cardVariants}>
             <div className="flex flex-col justify-center items-center gap-3">
               <Image src={imdP} className="w-56 h-56 " alt="logo" />
-              <h1 className="text-5xl font-semibold">
+              <h1 className="font-medium text-lg sm:text-2xl lg:text-3xl dark:text-white">
                 Piensa en grande y nosotros lo hacemos.
               </h1>
             </div>

@@ -8,7 +8,9 @@ export const Questions = () => {
       className="h-screen flex justify-center items-center flex-col w-full"
       id="preguntasfrecuentes"
     >
-      <h1 className="font-bold mb-3 text-2xl">Preguntas Frecuentes</h1>
+      <h1 className="font-bold mb-3 text-2xl dark:text-white">
+        Preguntas Frecuentes
+      </h1>
       <motion.vid
         initial="offscreen"
         whileInView="onscreen"
