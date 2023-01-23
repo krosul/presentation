@@ -121,6 +121,7 @@ export const Navbar = () => {
             >
               {Links.map(({ text, href }, index) => (
                 <motion.div
+                  key={index}
                   initial={{
                     open: {
                       opacity: 1,
