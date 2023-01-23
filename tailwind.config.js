@@ -8,10 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blackPrimary: "#042a54",
-        whitePrimary: "#def4ef",
-        bluePrimary: "#006a99",
-        blueSecondary: "#006a99"
+        blackPrimary: "#404343",
+        whitePrimary: "#ede8e5",
+        yellowPrimary: "#659ea6",
+        redSoft: "#e36a61",
+
       },
       keyframes: {
         "show": {

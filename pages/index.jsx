@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import { MainLayout } from '../layouts/MainLayout';
 import imdP from '../public/astronauta.png';
-import { Innovacion, Navbar, Questions, Valor, WhoAre } from '../components';
+import {
+  Footer,
+  Innovacion,
+  Navbar,
+  Questions,
+  Valor,
+  WhoAre,
+} from '../components';
 import { motion, useTime } from 'framer-motion';
 export default function Home() {
   const cardVariants = {
@@ -43,6 +50,7 @@ export default function Home() {
       <Innovacion />
       <WhoAre />
       <Questions />
+      <Footer />
     </MainLayout>
   );
 }

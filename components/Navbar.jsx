@@ -53,7 +53,7 @@ export const Navbar = () => {
     <motion.nav
       initial={false}
       animate={OpenToggleBar ? 'open' : 'closed'}
-      className="flex justify-start items-center mt-3  absolute top-3 h-full w-full flex-col "
+      className="flex justify-start items-center mt-3  absolute top-3 h-[99%] w-full flex-col "
     >
       <div className=" w-4/5 sticky top-3 z-10">
         <div className="flex items-center justify-between bg-white p-3 rounded-lg">
@@ -119,30 +119,38 @@ export const Navbar = () => {
                 },
               }}
             >
-              {/* {Links.map(({ text, href }, index) => ( */}
-              <motion.div
-                initial={{
-                  open: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { type: 'spring', stiffness: 300, damping: 24 },
-                  },
-                  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-                }}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
-                animate={'open'}
-              >
-                <NextLink
-                  href={'/'}
-                  // key={index}
-                  className="font-semibold border-b-2 border-blackPrimary"
-                  onClick={() => setOpenToggleBar(!OpenToggleBar)}
+              {Links.map(({ text, href }, index) => (
+                <motion.div
+                  initial={{
+                    open: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 24,
+                      },
+                    },
+                    closed: {
+                      opacity: 0,
+                      y: 20,
+                      transition: { duration: 0.2 },
+                    },
+                  }}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  animate={'open'}
                 >
-                  "tex"
-                </NextLink>
-              </motion.div>
-              {/* ))} */}
+                  <NextLink
+                    href={href}
+                    key={index}
+                    className="font-semibold border-b-2 border-blackPrimary"
+                    onClick={() => setOpenToggleBar(!OpenToggleBar)}
+                  >
+                    {text}
+                  </NextLink>
+                </motion.div>
+              ))}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

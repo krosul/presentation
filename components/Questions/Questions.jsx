@@ -8,7 +8,7 @@ export const Questions = () => {
       className="h-screen flex justify-center items-center flex-col w-full"
       id="preguntasfrecuentes"
     >
-      <h1 className="font-bold mb-3 text-2xl dark:text-white">
+      <h1 className="font-bold mb-3 text-2xl dark:text-redSoft">
         Preguntas Frecuentes
       </h1>
       <motion.vid
@@ -25,12 +25,12 @@ export const Questions = () => {
         />
         <QuestionsCards
           title="Como es el proceso de creacion?"
-          description="Somos una empresa dedicada a la contruccion de software a la medida con años de experiencia en el campo nos encargamos de la creacion de paginas web desde lo mas basico hasta lo mas avanzado"
+          description="Nos ponemos en contacto con usted para concretar varias reuniones donde se ven los requerimientos,alcances y necesidades del proyecto"
           index={1}
         />
         <QuestionsCards
-          title="Como se paga?"
-          description="Somos una empresa dedicada a la contruccion de software a la medida con años de experiencia en el campo nos encargamos de la creacion de paginas web desde lo mas basico hasta lo mas avanzado"
+          title="Como es el metodo de pago?"
+          description="Nuestro principal diferenciador es nuestro metodo de pago el cual es a credito, es decir, usted va pagando el proyecto a la medida que se va desarrollando o puede seguir pagando despues de finalizado el proyecto en cuotas"
           index={1.2}
         />
       </motion.vid>
