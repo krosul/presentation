@@ -30,7 +30,7 @@ export const WhoAre = () => {
         variants={cardVariants}
         className="flex justify-center items-center flex-col"
       >
-        <img src={interrogacion.src} alt="light-bulb" className="w-64 h-64" />
+        {/* <img src={interrogacion.src} alt="light-bulb" className="w-64 h-64" /> */}
         <div className="text-center w-4/5 ">
           <h1 className="font-medium text-lg sm:text-2xl lg:text-3xl dark:text-white">
             Somos expertos en desarrollo web con años de experiencias a la

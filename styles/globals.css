@@ -4,4 +4,16 @@
 
 body {
   @apply bg-whitePrimary;
+  @apply w-full;
+}
+#__next {
+  @apply w-full bg-red-500;
+}
+html,
+body {
+  @apply w-full;
+}
+
+#__next {
+  @apply flex flex-col min-w-full;
 }

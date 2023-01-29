@@ -129,7 +129,7 @@ export const Navbar = () => {
                   <NextLink
                     href={href}
                     key={index}
-                    className="font-semibold border-b-2 text-whitePrimary text-whitePrimary"
+                    className="font-semibold border-b-2 text-whitePrimary "
                     onClick={() => setOpenToggleBar(!OpenToggleBar)}
                   >
                     {text}
