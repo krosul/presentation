@@ -13,7 +13,11 @@ export const Footer = () => {
     <div className="w-full h-56 bg-yellowPrimary flex flex-col justify-center items-center p-2">
       <div className="flex justify-center items-start z-40 gap-5 p-2">
         {Links.map(({ text, href }, index) => (
-          <NextLink href={href} key={index} className="hover:underline p-2">
+          <NextLink
+            href={href}
+            key={index}
+            className="hover:underline p-2 text-whitePrimary"
+          >
             {text}
           </NextLink>
         ))}
@@ -21,7 +25,7 @@ export const Footer = () => {
       <a
         href="https://www.flaticon.es/"
         title="transbordador espacial iconos"
-        className="font-base z-40 no-underline"
+        className="font-base z-40 no-underline text-whitePrimary"
       >
         Iconos realizados por Freepik de www.flaticon.com
       </a>
